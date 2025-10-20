@@ -1,0 +1,8 @@
+<app-header (menuToggled)="toggleMenu()"></app-header>
+<div class="relative">
+  <app-menu
+    class="absolute top-0 left-0 transform transition-all duration-300 ease-in-out"
+    [class.translate-x-0]="isMenuVisible"
+    [class.-translate-x-full]="!isMenuVisible"
+  ></app-menu>
+</div>
