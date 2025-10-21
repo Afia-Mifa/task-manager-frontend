@@ -1,9 +1,17 @@
-<div class="grid grid-rows-[auto_1fr_auto] grid-cols-[16rem_1fr] min-h-screen">
-<app-header (menuToggled)="toggleMenu()" class="sticky top-0 z-20 col-span-2"></app-header>
-<app-menu class="bg-blue-50 sticky z-10 top-18 p-4 self-start h-[calc(100vh_-_72px)] shadow-md transition-transform duration-300 ease-in-out"
-    [class.-translate-x-full]="!isMenuVisible"
-    [class.translate-x-0]="isMenuVisible"
-></app-menu>
-<app-main-content></app-main-content>
-<footer class="col-start-2 col-span-1 bg-amber-50 p-10"></footer>
+<div class="grid grid-rows-[auto_1fr_auto] grid-cols-[auto_1fr] min-h-screen">
+  <app-header
+    (menuToggled)="toggleMenu()"
+    class="sticky top-0 z-20 col-span-2"
+  ></app-header>
+  <app-menu
+    class="bg-blue-50 sticky z-10 top-18 p-4 self-start h-[calc(100vh-72px)] shadow-md overflow-hidden transition-all duration-300 ease-in-out"
+    [class.translate-x-0]="!isMenuVisible"
+    [class.-translate-x-full]="isMenuVisible"
+  ></app-menu>
+  <div
+    class="overflow-auto transition-all duration-300 ease-in-out"
+    [ngStyle]="{ 'margin-left': isMenuVisible ? '-15rem' : '0' }"
+  >
+    <app-main-content></app-main-content>
+  </div>
 </div>
