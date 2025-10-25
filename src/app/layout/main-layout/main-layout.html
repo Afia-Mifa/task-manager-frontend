@@ -4,14 +4,13 @@
     class="sticky top-0 z-20 col-span-2"
   ></app-header>
   <app-menu
-    class="bg-blue-50 sticky z-10 top-18 p-4 self-start h-[calc(100vh-72px)] shadow-md overflow-hidden transition-all duration-300 ease-in-out"
+    class="bg-slate-50 w-70 sticky z-10 top-18 p-4 self-start h-[calc(100vh-72px)] shadow-md overflow-hidden transition-all duration-300 ease-in-out"
     [class.translate-x-0]="!isMenuVisible"
     [class.-translate-x-full]="isMenuVisible"
   ></app-menu>
-  <div
-    class="overflow-auto transition-all duration-300 ease-in-out"
-    [ngStyle]="{ 'margin-left': isMenuVisible ? '-15rem' : '0' }"
-  >
-    <app-main-content></app-main-content>
-  </div>
+
+  <app-main-content
+    class="class= bg-blue-50 p-4 overflow-auto transition-all duration-300 ease-in-out "
+    [ngStyle]="{ 'margin-left': isMenuVisible ? '-18rem' : '0' }"
+  ></app-main-content>
 </div>

@@ -1,1 +1,20 @@
-<aside>Nullam sapien metus, convall</aside>
+<aside>
+  <ul class="space-y-2">
+    @for (menuItem of menuItems(); track menuItem.label) {
+    <li
+      routerLinkActive="text-slate-900 font-medium"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="flex  items-center gap-2 p-2 rounded-md hover:bg-slate-200 hover:text-slate-900 transition-colors duration-200 cursor-pointer"
+    >
+      <img
+        [src]="'/icons/' + menuItem.icon + '.svg'"
+        class="w-5 h-5"
+        alt="{{ menuItem.label }}"
+      />
+      <a [routerLink]="menuItem.route">
+        <span>{{ menuItem.label }}</span>
+      </a>
+    </li>
+    }
+  </ul>
+</aside>
