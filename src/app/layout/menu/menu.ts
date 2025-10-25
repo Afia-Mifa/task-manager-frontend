@@ -1,12 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
-interface MenuItem {
-  label: string;
-  route: string;
-  icon?: string; // optional, if you ever want to add icons
-}
-
 @Component({
   selector: 'app-menu',
   imports: [RouterLink, RouterLinkActive],

@@ -1,0 +1,1 @@
+type OrganizationResponse = Record<string, any>;
